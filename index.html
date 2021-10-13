@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Rotoplas Inversionistas</title>
-</head>
-<body>
-	
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Rotoplas Inversionistas</title>
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/inversionistas.css">
+		<!-- Slick / Slider CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<!-- Js -->
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	</head>
+
+	<body>
+		<!-- Navegacion -->
+		<nav class="navbar navbar-expand-xl navbar-light">
+			<div class="container-fluid">
+				<a href="#" class="navbar-brand">
+					<img src="resources/rotoplas_logo.svg" alt="Logotipo Rotoplas" title="Rotoplas" width="200">
+				</a>
+				<button 
+					class="navbar-toggler" 
+					type="button" 
+					data-bs-toggle="collapse" 
+					data-bs-target="#toggleMobileMenu" 
+					aria-controls="toggleMobileMenu" 
+					aria-expanded="false" 
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="toggleMobileMenu">
+					<ul class="navbar-nav ms-auto text-start">
+						<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Sitio Global</a></li>
+						<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Sitio Sustentabilidad</a></li>
+						<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Calendario</a></li>
+						<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Contacto RI</a></li>
+						<li class="nav-item mx-xl-1">
+							<select class="form-select w-auto h-100 my-2 my-lg-0" name="languageSelector" id="languageSelector">
+								<option data-i18n="app-selector-es" value="es">Esp</option>
+								<option data-i18n="app-selector-en" value="en">Eng</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Header -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col">
+					<p>Inversionistas</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer class="row mx-0 justify-content-between">
+			<div class="col-12 col-lg-3">
+				<h2>Contáctanos</h2>
+
+				<a class="footer-contacto" href="mailto:jorge.arguelles@outlook.com">
+					<img style="width:30px" src="resources/footer-contacto.svg" alt="Contacto"> Contacto RI
+				</a>
+
+				<a class="footer-contacto" href="tel:08001222476">
+					<img style="width:30px" src="resources/footer-telefono.svg" alt="Teléfono"> 800 506 3000
+				</a>
+
+				<p>Dirección: Torre Virreyes Calle Pedregal #24 Piso 19. Col. Molino del Rey; Delegación Miguel Hidalgo, C.P. 11040, Ciudad de México, México.</p>
+			</div>
+
+			<div class="col-12 col-lg-3">
+				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Global</span></a>
+				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Sustentabilidad</span></a>
+				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Calendario</span></a>
+			</div>
+
+			<div class="col-12 col-lg-3">
+				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Global</span></a>
+				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Sustentabilidad</span></a>
+				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Calendario</span></a>
+			</div>
+
+			<div class="col-12 col-lg-3">
+				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Global</span></a>
+				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Sustentabilidad</span></a>
+				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Calendario</span></a>
+			</div>
+		</footer>
+
+		<!-- jQery -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+		<!-- Slick Js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<!-- script -->
+		<script src="js/inversionistas.js"></script>
+	</body>
 </html>

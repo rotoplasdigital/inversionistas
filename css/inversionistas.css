@@ -1,0 +1,50 @@
+/* ==============================================================
+/*	FUENTES
+/* ============================================================== */
+	@font-face {
+		font-family: 'rotoplas_bold';
+		src: url('fonts/Rotoplas-Bold.otf');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'rotoplas_bold_italic';
+		src: url('fonts/Rotoplas-BoldItalic.otf');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'rotoplas_regular';
+		src: url('fonts/Rotoplas-Regular.otf');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'rotoplas_light';
+		src: url('fonts/Rotoplas-Light.otf');
+		font-display: swap;
+	}
+
+	body {
+		font-family: 'rotoplas_regular', sans-serif;
+		color: #002554;
+		font-size: 1rem;
+		line-height: normal;
+	}
+
+	.bold { font-family: 'rotoplas_bold'; }
+	.regular { font-family: 'rotoplas_regular'; }
+	.light { font-family: 'rotoplas_light'; }
+/* fuentes */
+
+
+
+footer {
+	background: #002554;
+	color: #fff;
+}
+
+.footer-btn img {
+	margin-right: .25rem;
+	vertical-align: middle;
+}
+.footer-btn span {
+	vertical-align: middle;
+}
