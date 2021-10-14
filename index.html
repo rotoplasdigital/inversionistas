@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<!-- Js -->
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="js/w3-include-html.js"></script>
 	</head>
 
 	<body>
@@ -21,48 +22,7 @@
 			<div class="row">
 				<div id="inicio-header" class="col p-0">
 					<!-- Navegacion -->
-					<nav id="inversionistas-navegacion" class="navbar navbar-expand-xl navbar-dark sticky-top">
-						<div class="container-fluid">
-							<a href="#" class="navbar-brand">
-								<img src="resources/rotoplas_logo_blanco_azul.svg" alt="Logotipo Rotoplas" title="Rotoplas" width="200">
-							</a>
-							<button 
-								class="navbar-toggler" 
-								type="button" 
-								data-bs-toggle="collapse" 
-								data-bs-target="#toggleMobileMenu" 
-								aria-controls="toggleMobileMenu" 
-								aria-expanded="false" 
-								aria-label="Toggle navigation">
-								<span class="navbar-toggler-icon"></span>
-							</button>
-
-							<div class="collapse navbar-collapse flex-column" id="toggleMobileMenu">
-								<ul class="navbar-nav ms-auto text-center d-none">
-									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Acerca de Rotoplas</a></li>
-									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Nuestro Portafolio</a></li>
-									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Información Financiera</a></li>
-									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Eventos Relevantes</a></li>
-									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Gobierno Corporativo</a></li>
-									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Sustentabilidad</a></li>
-									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">AGUA*& Bono Sustentable</a></li>
-								</ul>
-
-								<ul class="navbar-nav ms-auto text-center">
-									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Sitio Global</a></li>
-									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Sitio Sustentabilidad</a></li>
-									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Calendario</a></li>
-									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Contacto RI</a></li>
-									<li class="nav-item mx-xl-1">
-										<select class="form-select d-inline w-auto" name="languageSelector" id="languageSelector">
-											<option data-i18n="app-selector-es" value="es">Esp</option>
-											<option data-i18n="app-selector-en" value="en">Eng</option>
-										</select>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</nav>
+					<nav id="inversionistas-navegacion" class="navbar navbar-expand-xl navbar-dark sticky-top" w3-include-html="inversionistas-menu.html"></nav>
 					<!-- Slider -->
 					<div id="inicio-slider">
 						<div id="inicio-slider-nodo-1" class="inicio-slider-nodo">
@@ -90,33 +50,7 @@
 			</div>
 		</div>
 		<!-- Footer -->
-		<footer class="row m-0 px-3 justify-content-between light">
-			<div class="col-12 col-sm-6 col-lg-3 mb-3 m-lg-0">
-				<h2 class="fs20 mb-3">Contáctanos</h2>
-				<a class="footer-btn hvr-forward" href="mailto:jorge.arguelles@outlook.com"><img style="width:30px" src="resources/footer-contacto.svg" alt="Contacto"> Contacto RI</a>
-				<a class="footer-btn hvr-forward" href="tel:08001222476"><img style="width:30px" src="resources/footer-telefono.svg" alt="Teléfono"> 800 506 3000</a>
-				<p class="pt-3">Dirección: Torre Virreyes Calle Pedregal #24 Piso 19. Col. Molino del Rey; Delegación Miguel Hidalgo, C.P. 11040, Ciudad de México, México.</p>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3 mb-3 m-lg-0">
-				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Global</span></a>
-				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Sustentabilidad</span></a>
-				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Calendario</span></a>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3 mb-3 m-lg-0">
-				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Acerca de Rotoplas</span></a>
-				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Nuestro Portafolio</span></a>
-				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Información Financiera</span></a>
-				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Eventos Relevantes</span></a>
-				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Gobierno Corporativo</span></a>
-				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sustentabilidad</span></a>
-				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>AGUA*& Bono Sustentable</span></a>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<h2 class="fs20 mb-3">Nuestras redes</h2>
-				<a class="footer-btn hvr-forward" href="#"><img style="width:30px" src="resources/sociales-twitter.svg" alt="Twitter"> Twitter</a>
-				<a class="footer-btn hvr-forward" href="#"><img style="width:30px" src="resources/sociales-linkedin.svg" alt="LinkedIn"> LinkedIn</a>
-			</div>
-		</footer>
+		<footer w3-include-html="inversionistas-footer.html" class="row m-0 px-3 justify-content-between light"></footer>
 
 		<!-- jQery -->
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

@@ -9,11 +9,18 @@
 	#inversionistas-navegacion {
 		background: rgb(0 37 84 / 0%);
 		transition: all ease .3s;
+		padding: 0 2rem;
 	}
+	#inversionistas-navegacion img {
+		width: 200px;
+		transition: all ease .3s;
+	}
+
 	.scrolled {
 		background: rgb(0 37 84 / 60%) !important;
-		padding-top: 0 !important;
-		padding-bottom: 0 !important;
+	}
+	.scrolled img {
+		width: 150px !important;
 	}
 	.navbar-dark .navbar-nav .nav-link {
 		color: rgba(255,255,255,1) !important;
@@ -25,7 +32,7 @@
 /*	INICIO
 /* ============================================================== */
 	#inicio-header {
-		background: url('../../../resources/images/inicio/inicio-fondo.jpg') no-repeat center;
+		background: url('../resources/images/inicio/inicio-fondo.jpg') no-repeat center;
 	}
 
 	#inicio-slider {
