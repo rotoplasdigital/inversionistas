@@ -16,80 +16,113 @@
 	</head>
 
 	<body>
-		<!-- Navegacion -->
-		<nav class="navbar navbar-expand-xl navbar-light">
-			<div class="container-fluid">
-				<a href="#" class="navbar-brand">
-					<img src="resources/rotoplas_logo.svg" alt="Logotipo Rotoplas" title="Rotoplas" width="200">
-				</a>
-				<button 
-					class="navbar-toggler" 
-					type="button" 
-					data-bs-toggle="collapse" 
-					data-bs-target="#toggleMobileMenu" 
-					aria-controls="toggleMobileMenu" 
-					aria-expanded="false" 
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="toggleMobileMenu">
-					<ul class="navbar-nav ms-auto text-start">
-						<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Sitio Global</a></li>
-						<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Sitio Sustentabilidad</a></li>
-						<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Calendario</a></li>
-						<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Contacto RI</a></li>
-						<li class="nav-item mx-xl-1">
-							<select class="form-select w-auto h-100 my-2 my-lg-0" name="languageSelector" id="languageSelector">
-								<option data-i18n="app-selector-es" value="es">Esp</option>
-								<option data-i18n="app-selector-en" value="en">Eng</option>
-							</select>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+		
 
 		<!-- Header -->
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col">
-					<p>Inversionistas</p>
+
+				<div id="inicio-header" class="col p-0">
+
+					<!-- Navegacion -->
+					<nav class="navbar navbar-expand-xl navbar-dark">
+						<div class="container-fluid">
+							<a href="#" class="navbar-brand">
+								<img src="resources/rotoplas_logo_blanco_azul.svg" alt="Logotipo Rotoplas" title="Rotoplas" width="200">
+							</a>
+							<button 
+								class="navbar-toggler" 
+								type="button" 
+								data-bs-toggle="collapse" 
+								data-bs-target="#toggleMobileMenu" 
+								aria-controls="toggleMobileMenu" 
+								aria-expanded="false" 
+								aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+
+							<div class="collapse navbar-collapse flex-column" id="toggleMobileMenu">
+								<ul class="navbar-nav ms-auto text-center d-none">
+									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Acerca de Rotoplas</a></li>
+									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Nuestro Portafolio</a></li>
+									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Información Financiera</a></li>
+									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Eventos Relevantes</a></li>
+									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Gobierno Corporativo</a></li>
+									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Sustentabilidad</a></li>
+									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">AGUA*& Bono Sustentable</a></li>
+								</ul>
+
+								<ul class="navbar-nav ms-auto text-center">
+									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Sitio Global</a></li>
+									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Sitio Sustentabilidad</a></li>
+									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Calendario</a></li>
+									<li class="nav-item mx-xl-1"><a class="nav-link menu-color-principal" data-i18n="[html]app-menu-" href="#">Contacto RI</a></li>
+									<li class="nav-item mx-xl-1">
+										<select class="form-select w-auto h-100 my-2 my-lg-0" name="languageSelector" id="languageSelector">
+											<option data-i18n="app-selector-es" value="es">Esp</option>
+											<option data-i18n="app-selector-en" value="en">Eng</option>
+										</select>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+
+					<div id="inicio-slider">
+						<div id="inicio-slider-nodo-1" class="inicio-slider-nodo">
+							<div class="slider-texto light">
+								<p class="fs40">Más soluciones de agua mejor calidad de vida</p>
+								<p>Respaldados por cuatro décadas de experiencia y motivados por nuestra misión, ofrecemos soluciones individuales (productos) y soluciones con servicio con la garantía de que cuentan con la más alta calidad.</p>
+							</div>
+
+							<div class="d-flex flex-row justify-content-evenly flex-wrap">
+								<a class="slider-btn hvr-float" href="#"><span>Acerca de<br>Rotoplas</span></a>
+								<a class="slider-btn hvr-float" href="#"><span>Nuestro<br>Portafolio</span></a>
+								<a class="slider-btn hvr-float" href="#"><span>Información<br>Financiera</span></a>
+								<a class="slider-btn hvr-float" href="#"><span>Eventos<br>Relevantes</span></a>
+								<a class="slider-btn hvr-float" href="#"><span>Gobierno<br>Corporativo</span></a>
+								<a class="slider-btn hvr-float" href="#"><span>Sustentabilidad</span></a>
+								<a class="slider-btn hvr-float" href="#"><span>AGUA*& Bono<br>Sustentable</span></a>
+							</div>
+						</div>
+
+						<div id="inicio-slider-nodo-2" class="inicio-slider-nodo">
+							<p>slider</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 
 		<!-- Footer -->
-		<footer class="row mx-0 justify-content-between">
-			<div class="col-12 col-lg-3">
-				<h2>Contáctanos</h2>
-
-				<a class="footer-contacto" href="mailto:jorge.arguelles@outlook.com">
-					<img style="width:30px" src="resources/footer-contacto.svg" alt="Contacto"> Contacto RI
-				</a>
-
-				<a class="footer-contacto" href="tel:08001222476">
-					<img style="width:30px" src="resources/footer-telefono.svg" alt="Teléfono"> 800 506 3000
-				</a>
-
-				<p>Dirección: Torre Virreyes Calle Pedregal #24 Piso 19. Col. Molino del Rey; Delegación Miguel Hidalgo, C.P. 11040, Ciudad de México, México.</p>
+		<footer class="row m-0 px-3 justify-content-between light">
+			<div class="col-12 col-sm-6 col-lg-3 mb-3 m-lg-0">
+				<h2 class="fs20 mb-3">Contáctanos</h2>
+				<a class="footer-btn hvr-forward" href="mailto:jorge.arguelles@outlook.com"><img style="width:30px" src="resources/footer-contacto.svg" alt="Contacto"> Contacto RI</a>
+				<a class="footer-btn hvr-forward" href="tel:08001222476"><img style="width:30px" src="resources/footer-telefono.svg" alt="Teléfono"> 800 506 3000</a>
+				<p class="pt-3">Dirección: Torre Virreyes Calle Pedregal #24 Piso 19. Col. Molino del Rey; Delegación Miguel Hidalgo, C.P. 11040, Ciudad de México, México.</p>
 			</div>
 
-			<div class="col-12 col-lg-3">
-				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Global</span></a>
-				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Sustentabilidad</span></a>
-				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Calendario</span></a>
+			<div class="col-12 col-sm-6 col-lg-3 mb-3 m-lg-0">
+				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Global</span></a>
+				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Sustentabilidad</span></a>
+				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Calendario</span></a>
 			</div>
 
-			<div class="col-12 col-lg-3">
-				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Global</span></a>
-				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Sustentabilidad</span></a>
-				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Calendario</span></a>
+			<div class="col-12 col-sm-6 col-lg-3 mb-3 m-lg-0">
+				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Acerca de Rotoplas</span></a>
+				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Nuestro Portafolio</span></a>
+				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Información Financiera</span></a>
+				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Eventos Relevantes</span></a>
+				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Gobierno Corporativo</span></a>
+				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sustentabilidad</span></a>
+				<a class="footer-btn hvr-forward" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>AGUA*& Bono Sustentable</span></a>
 			</div>
 
-			<div class="col-12 col-lg-3">
-				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Global</span></a>
-				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Sitio Sustentabilidad</span></a>
-				<a class="footer-btn" href="#"><img src="resources/menu-vineta.svg" width="16" alt=""><span>Calendario</span></a>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<h2 class="fs20 mb-3">Nuestras redes</h2>
+				<a class="footer-btn hvr-forward" href="#"><img style="width:30px" src="resources/sociales-twitter.svg" alt="Twitter"> Twitter</a>
+				<a class="footer-btn hvr-forward" href="#"><img style="width:30px" src="resources/sociales-linkedin.svg" alt="LinkedIn"> LinkedIn</a>
 			</div>
 		</footer>
 
