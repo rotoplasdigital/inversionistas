@@ -10,20 +10,29 @@
 		background: rgb(0 37 84 / 0%);
 		transition: all ease .3s;
 		padding: 0 2rem;
+		padding-top: .5rem !important;
+		padding-bottom: .5rem !important;
 	}
 	#inversionistas-navegacion img {
 		width: 200px;
 		transition: all ease .3s;
 	}
 
-	.scrolled {
+	#inversionistas-navegacion.scrolled {
 		background: rgb(0 37 84 / 60%) !important;
+		padding-top: 0rem !important;
 	}
-	.scrolled img {
-		width: 150px !important;
-	}
-	.navbar-dark .navbar-nav .nav-link {
+
+	.nav-link {
 		color: rgba(255,255,255,1) !important;
+	}
+
+	#inversionistas-navegacion.menu-secundario .nav-link {
+		color: rgb(0 37 84 / 100%) !important;
+	}
+
+	#inversionistas-navegacion.menu-secundario.scrolled .nav-link {
+		color: #fff !important;
 	}
 /* menu */
 
