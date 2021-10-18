@@ -85,7 +85,7 @@
 		text-decoration: none;
 		transition: all ease .3s;
 		text-align: center;
-		font-family: rotoplas_light;
+		font-family: rotoplas-light;
 	}
 	.slider-btn:hover {
 		color: #fff;
@@ -124,6 +124,36 @@
 		}
 	/* slick */
 /* inicio */
+
+
+.titulos-interior {
+	font-size: 40px;
+	font-family: 'rotoplas-light';
+}
+
+
+/* ==============================================================
+/*	ACERCA DE ROTOPLAS
+/* ============================================================== */
+	.acerca-nodos-wrapper a {
+		text-decoration: none;
+		color: #002554;
+	}
+	.acerca-nodos-wrapper a:hover p {
+		background: #002554;
+		color: #fff;
+	}
+	.acerca-nodos-wrapper a img {
+		width: 80px;
+	}
+	.acerca-nodos-wrapper a p {
+		padding: .25rem 1rem;
+		border-radius: 1rem;
+		border: 1px solid #002554;
+		margin-top: .5rem;
+		transition: all ease .3s;
+	}
+/* acerca de rotoplas */
 
 
 /* ==============================================================

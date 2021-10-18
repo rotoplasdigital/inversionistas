@@ -2,36 +2,36 @@
 /*	FUENTES
 /* ============================================================== */
 	@font-face {
-		font-family: 'rotoplas_bold';
+		font-family: 'rotoplas-bold';
 		src: url('fonts/Rotoplas-Bold.otf');
 		font-display: swap;
 	}
 	@font-face {
-		font-family: 'rotoplas_bold_italic';
+		font-family: 'rotoplas-bold-italic';
 		src: url('fonts/Rotoplas-BoldItalic.otf');
 		font-display: swap;
 	}
 	@font-face {
-		font-family: 'rotoplas_regular';
+		font-family: 'rotoplas-regular';
 		src: url('fonts/Rotoplas-Regular.otf');
 		font-display: swap;
 	}
 	@font-face {
-		font-family: 'rotoplas_light';
+		font-family: 'rotoplas-light';
 		src: url('fonts/Rotoplas-Light.otf');
 		font-display: swap;
 	}
 
 	body {
-		font-family: 'rotoplas_regular', sans-serif;
+		font-family: 'rotoplas-regular', sans-serif;
 		color: #002554;
 		font-size: 1rem;
 		line-height: normal;
 	}
 
-	.bold { font-family: 'rotoplas_bold'; }
-	.regular { font-family: 'rotoplas_regular'; }
-	.light { font-family: 'rotoplas_light'; }
+	.bold { font-family: 'rotoplas-bold'; }
+	.regular { font-family: 'rotoplas-regular'; }
+	.light { font-family: 'rotoplas-light'; }
 /* fuentes */
 
 

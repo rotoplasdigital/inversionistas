@@ -28,11 +28,11 @@ function includeHTML() {
 	// cambio de logo
 	if ($('nav').hasClass('menu-secundario')) {
 		console.log('secundario');
-		$('#inversionistas-navegacion-logo').attr("src","../../resources/rotoplas_logo.svg");
+		$('#inversionistas-navegacion-logo').attr("src","../resources/rotoplas_logo.svg");
 		$('.primera-linea').css('display','flex');
 	} else {
 		console.log('principal');
-		$('#inversionistas-navegacion-logo').attr("src","../../resources/rotoplas_logo_blanco_azul.svg");
+		$('#inversionistas-navegacion-logo').attr("src","../resources/rotoplas_logo_blanco_azul.svg");
 		$('.primera-linea').css('display','none');
 	}
 };
