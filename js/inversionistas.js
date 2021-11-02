@@ -1,4 +1,3 @@
-console.log("inv:rdy");
 jQuery(document).ready(function($){
 	// Inicializacion de la carga de contenidos html
 	includeHTML();

@@ -1,3 +1,4 @@
+//https://www.w3schools.com/howto/howto_html_include.asp
 function includeHTML() {
 	var z, i, elmnt, file, xhttp;
 	/*loop through a collection of all HTML elements:*/
@@ -27,11 +28,11 @@ function includeHTML() {
 
 	// cambio de logo
 	if ($('nav').hasClass('menu-secundario')) {
-		console.log('secundario');
+		//console.log('secundario');
 		$('#inversionistas-navegacion-logo').attr("src","../resources/rotoplas_logo.svg");
 		$('.primera-linea').css('display','flex');
 	} else {
-		console.log('principal');
+		//console.log('principal');
 		$('#inversionistas-navegacion-logo').attr("src","../resources/rotoplas_logo_blanco_azul.svg");
 		$('.primera-linea').css('display','none');
 	}

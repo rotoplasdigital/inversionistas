@@ -23,22 +23,31 @@
 		<div class="container-fluid">
 			<div class="row py-3 my-3 align-items-center">
 				<div class="col-12 ps-0 | col-sm-6 | col-md-5 | col-lg-5">
-					<p class="titulos-interior">Eventos Relevantes</p>
-					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, aliquid quam repellendus, non rerum quibusdam nostrum animi, ab ipsum corporis quisquam amet expedita beatae molestias doloribus alias voluptate est molestiae!</p>
+					<img class="w-100" src="../resources/images/eventos-relevantes/eventos-relevantes-header.jpg" alt="Imagen" title="Eventos Relevantes">
+				</div>
+				<div class="col-12 | col-sm-6 | col-md-5 offset-md-1 | col-lg-5 offset-lg-1">
+					<h2 class="titulos-interior">Eventos Relevantes</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta eligendi odio omnis eum. Vitae quibusdam neque sapiente accusantium. Eaque ipsa ducimus magnam a atque ad ratione natus commodi velit id!</p>
 				</div>
 			</div>
-			
+			<!-- botones -->
 			<div class="row py-3 my-3">
-				<div class="col">
-
+				<div class="col-12">
 					
+					<div id="spinner-border" class="text-center">
+						<div class="spinner-border" role="status">
+							<span class="visually-hidden">Cargando...</span>
+						</div>
+					</div>
 					
-					<div class="tab-selector"></div>
 
-					<table id="documentos-relevantes" class="table">
-
-					</table>
-
+					<div id="tab-selector" class="text-center" style="display: none;"></div>
+				</div>
+			</div>
+			<!-- tabs -->
+			<div class="row py-3 my-3">
+				<div class="col-12 | col-lg-10 offset-lg-1">
+					<div id="tabs"></div>
 				</div>
 			</div>
 		</div>
@@ -55,38 +64,115 @@
 			<script src="../../js/inversionistas.js"></script>
 			<script src="../../js/papaparse.min.js"></script>
 			<script>
-				$(document).ready(function(){
-					// Variables
-					dadatos = "";
-					table = "";
-
-					console.log('tabla');
-					//
-					Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRL3BvHxW67vw638IC7L6Xp6Spedc31CnYiauy1dYKg7BMuISEuU8w4ea8weB-SJs7-bZbkuvK2h7sF/pub?gid=0&single=true&output=csv", {
-						download: true,
-						complete: function(results) {
-							datos = results.data
-							console.log(datos);
-
-							for( i=0; i<datos.length; i++ ) {
-								table+= "<tr>";
-
-								var row = datos[i];
-								var cells = row.join(",").split(",");
-								
-								for( j=0; j<cells.length; j++ ) {
-									table+= "<td>";
-									table+= cells[j];
-									table+= "</th>";
-								}
-
-								table+= "</tr>";
+				const wrapper = document.getElementById('tabs')
+				// funcion para llamar Papaparser
+				function getPapaparser(filepath) {
+					return new Promise(function(resolve, reject) { //return new Promise((resolve, reject) => {
+						Papa.parse(filepath, {
+							download: true,
+							complete (results) { // complete (results, file)
+								resolve(results)
+							},
+							error (err) { // error (err, file)
+								reject(err)
 							}
-
-							//table+= "</table>";
-							$("#documentos-relevantes").html(table);
+						})
+					})
+				}
+				//
+				(async function() {
+					const getYearsUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL3BvHxW67vw638IC7L6Xp6Spedc31CnYiauy1dYKg7BMuISEuU8w4ea8weB-SJs7-bZbkuvK2h7sF/pub?gid=109872485&single=true&output=csv";
+					try {
+						// obetenemos los años y las urls
+						var data = await getPapaparser(getYearsUrl)
+						data = data.data
+						console.log(data)
+						// hacemos loop para pedir la info de cada año
+						for( i=0; i < data.length; i++ ) {
+							dataLine = data[i]
+							dataCell = dataLine.join(",").split(",")
+							year = dataCell[0]
+							//console.log('año:'); console.log(year);
+							// pedimos la info del año
+							var yearContent = await getPapaparser(dataCell[1])
+							console.log('yearContent:')
+							console.log(yearContent.data)
+							// creamos los botones
+							if( !document.getElementById('tab-selector-'+year)) {
+								tabSel = document.createElement('div')
+								tabSel.setAttribute('id','tab-selector-'+year)
+								tabSel.setAttribute('class','hvr-float tab-selector')
+								tabSel.setAttribute('attr',year)
+								tabSel.innerHTML = year
+								document.getElementById('tab-selector').appendChild(tabSel)
+							}
+							// creamos el tab de cada año
+							if( !document.getElementById('tab-'+year)) {
+								tab = document.createElement('div')
+								tab.setAttribute('id','tab-'+year)
+								tab.setAttribute('class','tab')
+								tab.style.display = 'none'
+								wrapper.appendChild(tab)
+							}
+							// construimos las lineas de cada tabla por cada año
+							for( j=0; j < yearContent.data.length; j++ ) {
+								var dataRow 	= yearContent.data[j];
+								var dataCell 	= dataRow.join(",").split(",")
+								// se agrega el div para el tab 
+								if( !document.getElementById('tab-'+year+'-'+dataCell[1])) {
+									tabDiv = document.createElement('div')
+									tabDiv.setAttribute('id','tab-'+year+'-'+dataCell[1])
+									tab.appendChild(tabDiv)
+								}
+								// se agrega la cabeza de la tabla
+								if( !document.getElementById('tab-head-'+year+'-'+dataCell[1])) {
+									tabHead = document.createElement('div')
+									tabHead.setAttribute('id','tab-head-'+year+'-'+dataCell[1])
+									tabHead.setAttribute('class','enventos-relevantes-cabeza')
+									tabDiv.appendChild(tabHead)
+									document.getElementById('tab-head-'+year+'-'+dataCell[1]).innerHTML = '<p class="d-inline-block m-0 p-3 light white bg-blue5" style="width:120px">'+dataCell[1]+'T'+year.slice(year.length - 2)+'</p>'
+								}
+								// se agrega la tabla
+								if( !document.getElementById('table-'+year+'-'+dataCell[1])) {
+									tabTable = document.createElement('table')
+									tabTable.setAttribute('id','table-'+year+'-'+dataCell[1])
+									tabTable.setAttribute('class','table table-striped')
+									tabTable.innerHTML = '<tbody></tbody>'
+									tabDiv.appendChild(tabTable)
+								}
+								// verifica si esta activo y crea el tr / td
+								if(dataCell[0] != 'Inactivo') {
+									tabRow = document.createElement('tr')
+									tabRow.innerHTML += ''+
+										'<tr>'+
+											'<td style="width:25%;">'+dataCell[2]+'</td>'+
+											'<td>'+dataCell[3]+'</td>'+
+											'<td style="width:50px;"><a class="hvr-float" href="'+dataCell[4]+'"><img src="../../resources/icono-descarga-pdf.png" height="50" alt="'+dataCell[5]+'"></a></td>'+
+										'</tr>'
+									//	
+									tabTable.getElementsByTagName('tbody')[0].appendChild(tabRow)
+									//'<td style="width:25%;">'+dataCell[1]+':'+dataCell[2]+'</td>'+
+								}
+							}
 						}
-					});
+						
+					} catch (err) {
+						console.error('Could not parse', err)
+					}
+				})().then(function(){
+					console.log('carga')
+					//
+					$('#spinner-border').fadeOut('slow', function(){
+						$('#tab-selector').fadeIn('slow', function(){
+							document.getElementById('tab-selector').getElementsByTagName('div')[0].setAttribute('class','hvr-float tab-selector tab-selector-selected')
+							$('.tab').first().fadeIn('slow')
+						})
+					})
+					//
+					$('.tab-selector').click(function(){
+						tabYear = this.getAttribute('attr')
+						console.log('click: ' + tabYear)
+					})
 				});
 			</script>
 	</body>
