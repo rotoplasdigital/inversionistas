@@ -14,23 +14,6 @@
 td {
 	vertical-align: middle;
 }
-.tab-selector {
-	padding: .5rem 1rem;
-	border: 2px solid #002554;
-	border-radius: 2rem;
-	margin: .5rem;
-	transition: all ease .3s;
-	cursor: pointer;
-}
-.tab-selector:hover {
-	border: 2px solid #009cde;
-	background-color: #009cde;
-	color: #fff;
-}
-.tab-selector-selected {
-	background: #002554;
-	color: #fff;
-}
 
 
 /* ==============================================================
@@ -183,13 +166,66 @@ td {
 /* ==============================================================
 /*	EVENTOS RELEVANTES
 /* ============================================================== */
-.enventos-relevantes-cabeza {
-	background-color: #009cde;
-}
-.enventos-relevantes-cabeza p {
-	font-size: 40px;
+	.eventos-relevantes-selector {
+		padding: .5rem 1rem;
+		border: 2px solid #002554;
+		border-radius: 2rem;
+		margin: .5rem;
+		transition: all ease .3s;
+		cursor: pointer;
+	}
+	.eventos-relevantes-selector:hover {
+		border: 2px solid #009cde;
+		background-color: #009cde;
+		color: #fff;
+	}
+	.eventos-relevantes-selector.tab-selector-selected {
+		background: #002554;
+		color: #fff;
+	}
+	.eventos-relevantes-selector.tab-selector-selected:hover {
+		background: #009cde;
+		color: #fff;
+	}
+
+	.enventos-relevantes-cabeza {
+		background-color: #009cde;
+	}
+	.enventos-relevantes-cabeza p {
+		font-size: 40px;
+	}
+/* eventos relevantes */
+
+
+/* ==============================================================
+/*	INFORMACION FINANCIERA
+/* ============================================================== */
+.informacion-financiera-selector {
+    cursor: pointer;
 }
 
+.informacion-financiera-selector img {
+    height: 50px;
+}
+
+.informacion-financiera-selector p {
+    padding: .5rem 1rem;
+    border: 2px solid #002554;
+    border-radius: 2rem;
+    margin-top: .5rem;
+	transition: all ease .3s;
+}
+
+.informacion-financiera-selector:hover p {
+    background: #002554;
+	color: #fff;
+}
+
+.informacion-financiera-selector.tab-selector-selected p {
+    background: #002554;
+	color: #fff;
+}
+/* informacion financiera */
 
 
 /* ==============================================================
