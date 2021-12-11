@@ -64,116 +64,213 @@
 			<script src="../../js/inversionistas.js"></script>
 			<script src="../../js/papaparse.min.js"></script>
 			<script>
-				const wrapper = document.getElementById('tabs')
-				// funcion para llamar Papaparser
-				function getPapaparser(filepath) {
-					return new Promise(function(resolve, reject) { //return new Promise((resolve, reject) => {
-						Papa.parse(filepath, {
-							download: true,
-							complete (results) { // complete (results, file)
-								resolve(results)
-							},
-							error (err) { // error (err, file)
-								reject(err)
-							}
+				jQuery(document).ready(function($){
+
+					const wrapper = document.getElementById('tabs')
+					// funcion para llamar Papaparser
+					function getPapaparser(filepath) {
+						return new Promise(function(resolve, reject) { //return new Promise((resolve, reject) => {
+							Papa.parse(filepath, {
+								download: true,
+								complete (results) { // complete (results, file)
+									resolve(results)
+								},
+								error (err) { // error (err, file)
+									reject(err)
+								}
+							})
 						})
-					})
-				}
-				//
-				(async function() {
-					const getYearsUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL3BvHxW67vw638IC7L6Xp6Spedc31CnYiauy1dYKg7BMuISEuU8w4ea8weB-SJs7-bZbkuvK2h7sF/pub?gid=109872485&single=true&output=csv";
-					try {
-						// obetenemos los años y las urls
-						var data = await getPapaparser(getYearsUrl)
-						data = data.data
-						console.log(data)
-						// hacemos loop para pedir la info de cada año
-						for( i=0; i < data.length; i++ ) {
-							dataLine = data[i]
-							dataCell = dataLine.join(",").split(",")
-							year = dataCell[0]
-							//console.log('año:'); console.log(year);
-							// pedimos la info del año
-							var yearContent = await getPapaparser(dataCell[1])
-							console.log('yearContent:')
-							console.log(yearContent.data)
-							// creamos los botones
-							if( !document.getElementById('tab-selector-'+year)) {
-								tabSel = document.createElement('div')
-								tabSel.setAttribute('id','tab-selector-'+year)
-								tabSel.setAttribute('class','hvr-float eventos-relevantes-selector tab-selector')
-								tabSel.setAttribute('attr',year)
-								tabSel.innerHTML = year
-								document.getElementById('tab-selector').appendChild(tabSel)
-							}
-							// creamos el tab de cada año
-							if( !document.getElementById('tab-'+year)) {
-								tab = document.createElement('div')
-								tab.setAttribute('id','tab-'+year)
-								tab.setAttribute('class','tab')
-								tab.style.display = 'none'
-								wrapper.appendChild(tab)
-							}
-							// construimos las lineas de cada tabla por cada año
-							for( j=0; j < yearContent.data.length; j++ ) {
-								var dataRow 	= yearContent.data[j];
-								var dataCell 	= dataRow.join(",").split(",")
-								// se agrega el div para el tab 
-								if( !document.getElementById('tab-'+year+'-'+dataCell[1])) {
-									tabDiv = document.createElement('div')
-									tabDiv.setAttribute('id','tab-'+year+'-'+dataCell[1])
-									tab.appendChild(tabDiv)
-								}
-								// se agrega la cabeza de la tabla
-								if( !document.getElementById('tab-head-'+year+'-'+dataCell[1])) {
-									tabHead = document.createElement('div')
-									tabHead.setAttribute('id','tab-head-'+year+'-'+dataCell[1])
-									tabHead.setAttribute('class','enventos-relevantes-cabeza')
-									tabDiv.appendChild(tabHead)
-									document.getElementById('tab-head-'+year+'-'+dataCell[1]).innerHTML = '<p class="d-inline-block m-0 p-3 light white bg-blue5" style="width:120px">'+dataCell[1]+'T'+year.slice(year.length - 2)+'</p>'
-								}
-								// se agrega la tabla
-								if( !document.getElementById('table-'+year+'-'+dataCell[1])) {
-									tabTable = document.createElement('table')
-									tabTable.setAttribute('id','table-'+year+'-'+dataCell[1])
-									tabTable.setAttribute('class','table table-striped')
-									tabTable.innerHTML = '<tbody></tbody>'
-									tabDiv.appendChild(tabTable)
-								}
-								// verifica si esta activo y crea el tr / td
-								if(dataCell[0] != 'Inactivo') {
-									tabRow = document.createElement('tr')
-									tabRow.innerHTML += ''+
-										'<tr>'+
-											'<td style="width:25%;">'+dataCell[2]+'</td>'+
-											'<td>'+dataCell[3]+'</td>'+
-											'<td style="width:50px;"><a class="hvr-float" href="'+dataCell[4]+'"><img src="../../resources/icono-descarga-pdf.png" height="50" alt="'+dataCell[5]+'"></a></td>'+
-										'</tr>'
-									//	
-									tabTable.getElementsByTagName('tbody')[0].appendChild(tabRow)
-									//'<td style="width:25%;">'+dataCell[1]+':'+dataCell[2]+'</td>'+
-								}
-							}
-						}
-						
-					} catch (err) {
-						console.error('Could not parse', err)
 					}
-				})().then(function(){
-					console.log('carga')
 					//
-					$('#spinner-border').fadeOut('slow', function(){
-						$('#tab-selector').fadeIn('slow', function(){
-							document.getElementById('tab-selector').getElementsByTagName('div')[0].setAttribute('class','hvr-float eventos-relevantes-selector tab-selector tab-selector-selected')
-							$('.tab').first().fadeIn('slow')
+					async function main(){
+						const getYearsUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL3BvHxW67vw638IC7L6Xp6Spedc31CnYiauy1dYKg7BMuISEuU8w4ea8weB-SJs7-bZbkuvK2h7sF/pub?gid=109872485&single=true&output=csv";
+						try {
+							// obetenemos los años y las urls
+							var data = await getPapaparser(getYearsUrl)
+							data = data.data
+							console.log(data)
+							// hacemos loop para pedir la info de cada año
+							for( i=0; i < data.length; i++ ) {
+								dataLine = data[i]
+								dataCell = dataLine.join(",").split(",")
+								year = dataCell[0]
+								//console.log('año:'); console.log(year);
+								// pedimos la info del año
+								var yearContent = await getPapaparser(dataCell[1])
+								console.log('yearContent:')
+								console.log(yearContent.data)
+								// creamos los botones
+								if( !document.getElementById('tab-selector-'+year)) {
+									tabSel = document.createElement('div')
+									tabSel.setAttribute('id','tab-selector-'+year)
+									tabSel.setAttribute('class','hvr-float eventos-relevantes-selector tab-selector')
+									tabSel.setAttribute('attr',year)
+									tabSel.innerHTML = year
+									document.getElementById('tab-selector').appendChild(tabSel)
+								}
+								// creamos el tab de cada año
+								if( !document.getElementById('tab-'+year)) {
+									tab = document.createElement('div')
+									tab.setAttribute('id','tab-'+year)
+									tab.setAttribute('class','tab')
+									tab.style.display = 'none'
+									wrapper.appendChild(tab)
+								}
+								// construimos las lineas de cada tabla por cada año
+								for( j=0; j < yearContent.data.length; j++ ) {
+									var dataRow 	= yearContent.data[j];
+									var dataCell 	= dataRow.join(",").split(",")
+									// se agrega el div para el tab 
+									if( !document.getElementById('tab-'+year+'-'+dataCell[1])) {
+										tabDiv = document.createElement('div')
+										tabDiv.setAttribute('id','tab-'+year+'-'+dataCell[1])
+										tab.appendChild(tabDiv)
+									}
+									// se agrega la cabeza de la tabla
+									if( !document.getElementById('tab-head-'+year+'-'+dataCell[1])) {
+										tabHead = document.createElement('div')
+										tabHead.setAttribute('id','tab-head-'+year+'-'+dataCell[1])
+										tabHead.setAttribute('class','enventos-relevantes-cabeza')
+										tabDiv.appendChild(tabHead)
+										document.getElementById('tab-head-'+year+'-'+dataCell[1]).innerHTML = '<p class="d-inline-block m-0 p-3 light white bg-blue5" style="width:120px">'+dataCell[1]+'T'+year.slice(year.length - 2)+'</p>'
+									}
+									// se agrega la tabla
+									if( !document.getElementById('table-'+year+'-'+dataCell[1])) {
+										tabTable = document.createElement('table')
+										tabTable.setAttribute('id','table-'+year+'-'+dataCell[1])
+										tabTable.setAttribute('class','table table-striped')
+										tabTable.innerHTML = '<tbody></tbody>'
+										tabDiv.appendChild(tabTable)
+									}
+									// verifica si esta activo y crea el tr / td
+									if(dataCell[0] != 'Inactivo') {
+										tabRow = document.createElement('tr')
+										tabRow.innerHTML += ''+
+											'<tr>'+
+												'<td style="width:25%;">'+dataCell[2]+'</td>'+
+												'<td>'+dataCell[3]+'</td>'+
+												'<td style="width:50px;"><a class="hvr-float" href="'+dataCell[4]+'"><img src="../../resources/icono-descarga-pdf.png" height="50" alt="'+dataCell[5]+'"></a></td>'+
+											'</tr>'
+										//	
+										tabTable.getElementsByTagName('tbody')[0].appendChild(tabRow)
+										//'<td style="width:25%;">'+dataCell[1]+':'+dataCell[2]+'</td>'+
+									}
+								}
+							}
+							
+						} catch (err) {
+							console.error('Could not parse', err)
+						}
+					}
+					//
+					main().then(function(){
+						console.log('carga')
+						//
+						$('#spinner-border').fadeOut('slow', function(){
+							$('#tab-selector').fadeIn('slow', function(){
+								document.getElementById('tab-selector').getElementsByTagName('div')[0].setAttribute('class','hvr-float eventos-relevantes-selector tab-selector tab-selector-selected')
+								$('.tab').first().fadeIn('slow')
+							})
 						})
 					})
-					//
-					$('.tab-selector').click(function(){
+
+					/*
+					(async function() {
+						const getYearsUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL3BvHxW67vw638IC7L6Xp6Spedc31CnYiauy1dYKg7BMuISEuU8w4ea8weB-SJs7-bZbkuvK2h7sF/pub?gid=109872485&single=true&output=csv";
+						try {
+							// obetenemos los años y las urls
+							var data = await getPapaparser(getYearsUrl)
+							data = data.data
+							console.log(data)
+							// hacemos loop para pedir la info de cada año
+							for( i=0; i < data.length; i++ ) {
+								dataLine = data[i]
+								dataCell = dataLine.join(",").split(",")
+								year = dataCell[0]
+								//console.log('año:'); console.log(year);
+								// pedimos la info del año
+								var yearContent = await getPapaparser(dataCell[1])
+								console.log('yearContent:')
+								console.log(yearContent.data)
+								// creamos los botones
+								if( !document.getElementById('tab-selector-'+year)) {
+									tabSel = document.createElement('div')
+									tabSel.setAttribute('id','tab-selector-'+year)
+									tabSel.setAttribute('class','hvr-float eventos-relevantes-selector tab-selector')
+									tabSel.setAttribute('attr',year)
+									tabSel.innerHTML = year
+									document.getElementById('tab-selector').appendChild(tabSel)
+								}
+								// creamos el tab de cada año
+								if( !document.getElementById('tab-'+year)) {
+									tab = document.createElement('div')
+									tab.setAttribute('id','tab-'+year)
+									tab.setAttribute('class','tab')
+									tab.style.display = 'none'
+									wrapper.appendChild(tab)
+								}
+								// construimos las lineas de cada tabla por cada año
+								for( j=0; j < yearContent.data.length; j++ ) {
+									var dataRow 	= yearContent.data[j];
+									var dataCell 	= dataRow.join(",").split(",")
+									// se agrega el div para el tab 
+									if( !document.getElementById('tab-'+year+'-'+dataCell[1])) {
+										tabDiv = document.createElement('div')
+										tabDiv.setAttribute('id','tab-'+year+'-'+dataCell[1])
+										tab.appendChild(tabDiv)
+									}
+									// se agrega la cabeza de la tabla
+									if( !document.getElementById('tab-head-'+year+'-'+dataCell[1])) {
+										tabHead = document.createElement('div')
+										tabHead.setAttribute('id','tab-head-'+year+'-'+dataCell[1])
+										tabHead.setAttribute('class','enventos-relevantes-cabeza')
+										tabDiv.appendChild(tabHead)
+										document.getElementById('tab-head-'+year+'-'+dataCell[1]).innerHTML = '<p class="d-inline-block m-0 p-3 light white bg-blue5" style="width:120px">'+dataCell[1]+'T'+year.slice(year.length - 2)+'</p>'
+									}
+									// se agrega la tabla
+									if( !document.getElementById('table-'+year+'-'+dataCell[1])) {
+										tabTable = document.createElement('table')
+										tabTable.setAttribute('id','table-'+year+'-'+dataCell[1])
+										tabTable.setAttribute('class','table table-striped')
+										tabTable.innerHTML = '<tbody></tbody>'
+										tabDiv.appendChild(tabTable)
+									}
+									// verifica si esta activo y crea el tr / td
+									if(dataCell[0] != 'Inactivo') {
+										tabRow = document.createElement('tr')
+										tabRow.innerHTML += ''+
+											'<tr>'+
+												'<td style="width:25%;">'+dataCell[2]+'</td>'+
+												'<td>'+dataCell[3]+'</td>'+
+												'<td style="width:50px;"><a class="hvr-float" href="'+dataCell[4]+'"><img src="../../resources/icono-descarga-pdf.png" height="50" alt="'+dataCell[5]+'"></a></td>'+
+											'</tr>'
+										//	
+										tabTable.getElementsByTagName('tbody')[0].appendChild(tabRow)
+										//'<td style="width:25%;">'+dataCell[1]+':'+dataCell[2]+'</td>'+
+									}
+								}
+							}
+							
+						} catch (err) {
+							console.error('Could not parse', err)
+						}
+					})().then(function(){
+						console.log('carga')
+						//
+						$('#spinner-border').fadeOut('slow', function(){
+							$('#tab-selector').fadeIn('slow', function(){
+								document.getElementById('tab-selector').getElementsByTagName('div')[0].setAttribute('class','hvr-float eventos-relevantes-selector tab-selector tab-selector-selected')
+								$('.tab').first().fadeIn('slow')
+							})
+						})
+					});
+					*/
+
+					$('body').on("click", ".tab-selector", function(){
 						tabYear = this.getAttribute('attr')
 						console.log('click: ' + tabYear)
 					})
-				});
+				})
 			</script>
 	</body>
 </html>
