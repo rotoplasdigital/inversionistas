@@ -15,7 +15,6 @@
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="../../js/w3-include-html.js"></script>
 	</head>
-
 	<body>
 		<!-- Navegacion -->
 		<nav id="inversionistas-navegacion" class="menu-secundario navbar navbar-expand-xl sticky-top" w3-include-html="../../inversionistas-menu.html"></nav>
@@ -39,8 +38,6 @@
 							<span class="visually-hidden">Cargando...</span>
 						</div>
 					</div>
-					
-
 					<div id="tab-selector" class="text-center" style="display: none;"></div>
 				</div>
 			</div>
@@ -104,7 +101,7 @@
 									tabSel = document.createElement('div')
 									tabSel.setAttribute('id','tab-selector-'+year)
 									tabSel.setAttribute('class','hvr-float eventos-relevantes-selector tab-selector')
-									tabSel.setAttribute('attr',year)
+									tabSel.setAttribute('attr','tab-'+year)
 									tabSel.innerHTML = year
 									document.getElementById('tab-selector').appendChild(tabSel)
 								}
@@ -138,7 +135,7 @@
 									if( !document.getElementById('table-'+year+'-'+dataCell[1])) {
 										tabTable = document.createElement('table')
 										tabTable.setAttribute('id','table-'+year+'-'+dataCell[1])
-										tabTable.setAttribute('class','table table-striped')
+										tabTable.setAttribute('class','table table-striped tabla-eventos-relevantes')
 										tabTable.innerHTML = '<tbody></tbody>'
 										tabDiv.appendChild(tabTable)
 									}
@@ -173,7 +170,6 @@
 							})
 						})
 					})
-
 					/*
 					(async function() {
 						const getYearsUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRL3BvHxW67vw638IC7L6Xp6Spedc31CnYiauy1dYKg7BMuISEuU8w4ea8weB-SJs7-bZbkuvK2h7sF/pub?gid=109872485&single=true&output=csv";
@@ -265,11 +261,30 @@
 						})
 					});
 					*/
-
-					$('body').on("click", ".tab-selector", function(){
+					/* $('body').on("click", ".tab-selector", function(){
 						tabYear = this.getAttribute('attr')
 						console.log('click: ' + tabYear)
+					}) */
+					$('body').on("click", ".tab-selector", function(){
+					//$('.tab-selector').click(function(){
+						tabClicked = this.getAttribute('attr')
+						$('.tab-selector').removeClass('tab-selector-selected')
+						if ( !$(this).hasClass('tab-selector-selected') ) {
+							$(this).addClass('tab-selector-selected')
+						}
+						console.log('click: ' + tabClicked)
+						showHideTabs(tabClicked)
 					})
+					//
+					function showHideTabs(tabClicked) {
+						console.log('showHideTabs')
+						$('.tab:visible').each(function(){
+							//$(this).css('display','none')
+							$(this).fadeOut('fast', function(){
+								$('#' + tabClicked).fadeIn()
+							})
+						})
+					}
 				})
 			</script>
 	</body>

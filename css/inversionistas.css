@@ -15,6 +15,36 @@ td {
 	vertical-align: middle;
 }
 
+.table-head-title {
+	width: 50%;
+	font-size: 40px;
+	background: #009cde !important;
+	color: #fff;
+}
+.table-head-subtitle {
+	text-align: center;
+	background: #002554 !important;
+	color: #fff;
+	vertical-align: bottom;
+}
+
+.tabla-informe-anual {
+	color: #002554 !important;
+}
+.tabla-informe-anual-icono {
+	width: 70px;
+}
+.tabla-informe-anual-imagen {
+	width: 25%;
+}
+#informe-anual > div {
+	margin-bottom: 50px;
+}
+
+#informe-trimestral table {
+	margin-bottom: 50px;
+}
+
 
 /* ==============================================================
 /*	MENU
@@ -194,37 +224,41 @@ td {
 	.enventos-relevantes-cabeza p {
 		font-size: 40px;
 	}
+
+	.tabla-eventos-relevantes {
+		margin-bottom: 50px;
+	}
 /* eventos relevantes */
 
 
 /* ==============================================================
 /*	INFORMACION FINANCIERA
 /* ============================================================== */
-.informacion-financiera-selector {
-    cursor: pointer;
-}
+	.informacion-financiera-selector {
+		cursor: pointer;
+	}
 
-.informacion-financiera-selector img {
-    height: 50px;
-}
+	.informacion-financiera-selector img {
+		height: 50px;
+	}
 
-.informacion-financiera-selector p {
-    padding: .5rem 1rem;
-    border: 2px solid #002554;
-    border-radius: 2rem;
-    margin-top: .5rem;
-	transition: all ease .3s;
-}
+	.informacion-financiera-selector p {
+		padding: .5rem 1rem;
+		border: 2px solid #002554;
+		border-radius: 2rem;
+		margin-top: .5rem;
+		transition: all ease .3s;
+	}
 
-.informacion-financiera-selector:hover p {
-    background: #002554;
-	color: #fff;
-}
+	.informacion-financiera-selector:hover p {
+		background: #002554;
+		color: #fff;
+	}
 
-.informacion-financiera-selector.tab-selector-selected p {
-    background: #002554;
-	color: #fff;
-}
+	.informacion-financiera-selector.tab-selector-selected p {
+		background: #002554;
+		color: #fff;
+	}
 /* informacion financiera */
 
 
