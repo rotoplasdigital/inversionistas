@@ -307,6 +307,12 @@ td {
 		background: #002554;
 		color: #fff;
 	}
+
+	#asamblea table thead {
+		font-family: 'rotoplas-light';
+		color: #009cde;
+		font-size: 30px;
+	}
 /* informacion financiera */
 
 
