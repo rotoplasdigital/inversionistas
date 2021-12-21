@@ -37,6 +37,7 @@ td {
 .tabla-informe-anual-imagen {
 	width: 25%;
 }
+
 #informe-anual > div {
 	margin-bottom: 50px;
 }
@@ -256,6 +257,53 @@ td {
 	}
 
 	.informacion-financiera-selector.tab-selector-selected p {
+		background: #002554;
+		color: #fff;
+	}
+/* informacion financiera */
+
+
+/* ==============================================================
+/*	GOBIERNO CORPORATIVO
+/* ============================================================== */
+	#consejo .row:nth-child(1) {
+		background: rgba(0, 0, 0, 0.05);
+	}
+	.consejo-btns, 
+	.consejo-tabs {
+		background: #fff;
+		border-radius: 1rem;
+	}
+	.consejo-btns {
+		color: #009cde;
+	}
+	.consejo-btns div {
+		cursor: pointer;
+	}
+	.consejo-btns .subtab-selector-selected {
+		color: #002554;
+	}
+	#consejo table {
+		color: grey;
+	}
+	#consejo table thead {
+		color: #009cde;
+	}
+
+	.asamblea-btns div {
+		padding: .5rem 2rem;
+		margin: .5rem;
+		background: #fff;
+		color: #002554;
+		border-radius: 2rem;
+		cursor: pointer;
+		transition: all ease .3s;
+	}
+	.asamblea-btns div:hover {
+		background: #236192;
+		color: #fff;
+	}
+	.asamblea-btns .subtab-selector-selected {
 		background: #002554;
 		color: #fff;
 	}

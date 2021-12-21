@@ -59,10 +59,10 @@
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			<!-- script -->
 			<script src="../../js/inversionistas.js"></script>
+			<script src="../../js/inversionistas-tabs.js"></script>
 			<script src="../../js/papaparse.min.js"></script>
 			<script>
 				jQuery(document).ready(function($){
-
 					const wrapper = document.getElementById('tabs')
 					// funcion para llamar Papaparser
 					function getPapaparser(filepath) {
@@ -261,30 +261,6 @@
 						})
 					});
 					*/
-					/* $('body').on("click", ".tab-selector", function(){
-						tabYear = this.getAttribute('attr')
-						console.log('click: ' + tabYear)
-					}) */
-					$('body').on("click", ".tab-selector", function(){
-					//$('.tab-selector').click(function(){
-						tabClicked = this.getAttribute('attr')
-						$('.tab-selector').removeClass('tab-selector-selected')
-						if ( !$(this).hasClass('tab-selector-selected') ) {
-							$(this).addClass('tab-selector-selected')
-						}
-						console.log('click: ' + tabClicked)
-						showHideTabs(tabClicked)
-					})
-					//
-					function showHideTabs(tabClicked) {
-						console.log('showHideTabs')
-						$('.tab:visible').each(function(){
-							//$(this).css('display','none')
-							$(this).fadeOut('fast', function(){
-								$('#' + tabClicked).fadeIn()
-							})
-						})
-					}
 				})
 			</script>
 	</body>
