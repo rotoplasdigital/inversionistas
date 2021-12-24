@@ -2,10 +2,8 @@ jQuery(document).ready(function($){
 	// TABS
 	$('body').on("click", ".tab-selector", function(){
 		tabClicked = this.getAttribute('attr')
-		$('.tab-selector').removeClass('tab-selector-selected')
-		if ( !$(this).hasClass('tab-selector-selected') ) {
-			$(this).addClass('tab-selector-selected')
-		}
+		$(this).parent().find("[class*='tab-selector-selected']").removeClass('tab-selector-selected')
+		$('.tab-selector[attr="' + tabClicked + '"]').addClass('tab-selector-selected')
 		console.log('click: ' + tabClicked)
 		showHideTabs(tabClicked)
 	})
@@ -21,10 +19,9 @@ jQuery(document).ready(function($){
 	// SUBTABS
 	$('body').on("click", ".subtab-selector", function(){
 		tabClicked = this.getAttribute('attr')
-		$('.subtab-selector').removeClass('subtab-selector-selected')
-		if ( !$(this).hasClass('subtab-selector-selected') ) {
-			$(this).addClass('subtab-selector-selected')
-		}
+		//$(this).parent().find('.subtab-selector.subtab-selector-selected').removeClass('subtab-selector-selected')
+		$(this).parent().find("[class*='subtab-selector-selected']").removeClass('subtab-selector-selected')
+		$('.subtab-selector[attr="' + tabClicked + '"]').addClass('subtab-selector-selected')
 		console.log('click: ' + tabClicked)
 		showHideSubTabs(tabClicked)
 	})
@@ -32,6 +29,23 @@ jQuery(document).ready(function($){
 	function showHideSubTabs(tabClicked) {
 		console.log('showHideTabs')
 		$('.subtab:visible').each(function(){
+			$(this).fadeOut('fast', function(){
+				$('#' + tabClicked).fadeIn()
+			})
+		})
+	}
+	//THIRD TABS
+	$('body').on("click", ".thirdbtab-selector", function(){
+		tabClicked = this.getAttribute('attr')
+		$(this).parent().find("[class*='thirdbtab-selector-selected']").removeClass('thirdbtab-selector-selected')
+		$('.thirdbtab-selector[attr="' + tabClicked + '"]').addClass('thirdbtab-selector-selected')
+		console.log('click: ' + tabClicked)
+		showHideThirdTabs(tabClicked)
+	})
+	//
+	function showHideThirdTabs(tabClicked) {
+		console.log('showHideTabs')
+		$('.thirdbtab:visible').each(function(){
 			$(this).fadeOut('fast', function(){
 				$('#' + tabClicked).fadeIn()
 			})

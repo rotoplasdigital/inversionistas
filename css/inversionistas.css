@@ -8,9 +8,6 @@
 	font-family: 'rotoplas-light';
 }
 
-/* table {
-	border-collapse: inherit !important;
-} */
 td {
 	vertical-align: middle;
 }
@@ -26,24 +23,6 @@ td {
 	background: #002554 !important;
 	color: #fff;
 	vertical-align: bottom;
-}
-
-.tabla-informe-anual {
-	color: #002554 !important;
-}
-.tabla-informe-anual-icono {
-	width: 70px;
-}
-.tabla-informe-anual-imagen {
-	width: 25%;
-}
-
-#informe-anual > div {
-	margin-bottom: 50px;
-}
-
-#informe-trimestral table {
-	margin-bottom: 50px;
 }
 
 
@@ -260,13 +239,32 @@ td {
 		background: #002554;
 		color: #fff;
 	}
+
+	.tabla-informe-anual {
+		color: #002554 !important;
+	}
+	.tabla-informe-anual-icono {
+		width: 70px;
+	}
+	.tabla-informe-anual-imagen {
+		width: 25%;
+	}
+	
+	#informe-anual > div {
+		margin-bottom: 50px;
+	}
+	
+	#informe-trimestral table {
+		margin-bottom: 50px;
+	}
 /* informacion financiera */
 
 
 /* ==============================================================
 /*	GOBIERNO CORPORATIVO
 /* ============================================================== */
-	#consejo .row:nth-child(1) {
+	/* consejo */
+	#consejo-nodo-01 .row:first-child {
 		background: rgba(0, 0, 0, 0.05);
 	}
 	.consejo-btns, 
@@ -290,6 +288,11 @@ td {
 		color: #009cde;
 	}
 
+	#consejo .thirdbtab-selector-selected {
+		color: #002554;
+	}
+
+	/* asamblea */
 	.asamblea-btns div {
 		padding: .5rem 2rem;
 		margin: .5rem;
@@ -307,7 +310,9 @@ td {
 		background: #002554;
 		color: #fff;
 	}
-
+	#asamblea table {
+		margin-bottom: 50px;
+	}
 	#asamblea table thead {
 		font-family: 'rotoplas-light';
 		color: #009cde;
