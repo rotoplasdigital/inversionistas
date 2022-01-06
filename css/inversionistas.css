@@ -351,3 +351,37 @@ td {
 		vertical-align: middle;
 	}
 /* footer */
+
+
+/* ==============================================================
+/*	CALENDARIO
+/* ============================================================== */
+	.calendario-head {
+		color: #fff !important;
+		font-size: 30px;
+		text-align: center;
+	}
+	.calendario-head-text {
+		color: #fff !important;
+		font-size: 20px;
+		padding: 1rem !important;
+	}
+	.calendario-blue2 {
+		background-color: #009cde !important;
+	}
+	.calendario-blue5 {
+		background-color: #002554 !important;
+	}
+/* calendario */
+
+
+/* ==============================================================
+/*	CONTACTO RI
+/* ============================================================== */
+	.cobertura-analistas td {
+		color: #002554 !important;
+	}
+	.cobertura-analistas th {
+		color: #009cde;
+	}
+/* contacto ri */
