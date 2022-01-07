@@ -37,7 +37,8 @@ td {
 		padding-bottom: .5rem !important;
 	}
 	#inversionistas-navegacion img {
-		width: 200px;
+		/* width: 200px; */
+		height: 70px;
 		transition: all ease .3s;
 	}
 
@@ -56,6 +57,10 @@ td {
 
 	#inversionistas-navegacion.menu-secundario.scrolled .nav-link {
 		color: #fff !important;
+	}
+
+	.segunda-linea {
+		font-size: 14px;
 	}
 /* menu */
 
