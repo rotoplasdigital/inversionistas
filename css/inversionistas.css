@@ -44,7 +44,7 @@ td {
 
 	#inversionistas-navegacion.scrolled {
 		background: rgb(0 37 84 / 60%) !important;
-		padding-top: 0rem !important;
+		/* padding-top: 0rem !important; */
 	}
 
 	.nav-link {
@@ -59,9 +59,16 @@ td {
 		color: #fff !important;
 	}
 
-	.segunda-linea {
-		font-size: 14px;
+	/* .primera-linea {
+		font-size: 15px;
 	}
+	.segunda-linea {
+		font-size: 13px;
+	}
+	#languageSelector {
+		font-size: 12px;
+	} */
+
 /* menu */
 
 
