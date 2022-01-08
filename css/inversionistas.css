@@ -69,6 +69,22 @@ td {
 		font-size: 12px;
 	} */
 
+	#languageSelector {
+		color: #002554;
+		background-color: transparent;
+		background-image: url("../resources/download-blue.svg");
+		background-repeat: no-repeat;
+		background-position: right 0.75rem center;
+		background-size: 16px 12px;
+		border: 2px solid #002554;
+		border-radius: 2rem;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+	#languageSelector:focus {
+		box-shadow: none;
+	}
 /* menu */
 
 
