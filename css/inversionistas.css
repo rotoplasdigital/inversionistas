@@ -285,6 +285,13 @@ td {
 	#informe-trimestral table {
 		margin-bottom: 50px;
 	}
+
+	#presentaciones table {
+		margin-bottom: 50px;
+	}
+	#presentaciones table tbody tr td:nth-child(odd) {
+		width: 90%;
+	}
 /* informacion financiera */
 
 
