@@ -143,9 +143,11 @@
 										tabRow = document.createElement('tr')
 										tabRow.innerHTML += ''+
 											'<tr>'+
-												'<td style="width:25%;">'+dataCell[2]+'</td>'+
+												'<td>'+dataCell[2]+'</td>'+
+												//'<td style="width:25%;">'+dataCell[2]+'</td>'+
 												'<td>'+dataCell[3]+'</td>'+
-												'<td style="width:50px;"><a class="hvr-float" href="'+dataCell[4]+'"><img src="../resources/icono-descarga-pdf.png" height="50" alt="'+dataCell[5]+'"></a></td>'+
+												'<td><a class="hvr-float" href="'+dataCell[6]+'" target="_blank"><img src="../resources/icono-descarga-pdf.png" height="50" alt="'+dataCell[5]+'"></a></td>'+
+												//'<td style="width:50px;"><a class="hvr-float" href="'+dataCell[4]+'"><img src="../resources/icono-descarga-pdf.png" height="50" alt="'+dataCell[5]+'"></a></td>'+
 											'</tr>'
 										//	
 										tabTable.getElementsByTagName('tbody')[0].appendChild(tabRow)
