@@ -236,6 +236,14 @@ td {
 	.tabla-eventos-relevantes {
 		margin-bottom: 50px;
 	}
+	.tabla-eventos-relevantes tbody tr td:nth-child(1) {
+		width: 120px;
+		text-align: center;
+	}
+	.tabla-eventos-relevantes tbody tr td:nth-child(3) {
+		width: 70px;
+		text-align: center;
+	}
 /* eventos relevantes */
 
 
@@ -353,7 +361,57 @@ td {
 		color: #009cde;
 		font-size: 30px;
 	}
-/* informacion financiera */
+
+	.eventos_date.bold.blue2 {
+		width: 120px;
+	}
+	.eventos_pdf {
+		width: 70px;
+	}
+
+	#documentos table tbody tr td:nth-child(2) {
+		width: 70px;
+	}
+
+	/* comites
+	----------- */
+	.comites-nodo { 
+		text-align: left; 
+		/* width: 60%;  */
+		margin: auto;
+		margin-top: 2rem;
+	}
+	.comites-nodo .titulo { 
+		display: block; 
+		font-size: 30px; 
+	}
+	.comites-nodo .texto { 
+		display: block; 
+		margin-bottom: 20px; 
+	}
+	.comites-nodo .categoria { 
+		display: inline-block; 
+		vertical-align: top; 
+		font-size: 20px; 
+		line-height: 20px 
+	}
+	.comites-nodo .separador { 
+		width: 6px; 
+		margin: 0 10px; 
+		vertical-align: top; 
+	}
+	.comites-nodo .directivos { 
+		display: inline-block; 
+		vertical-align: top; 
+	}
+	.comites-nodo .directivo { 
+		margin-bottom: 20px; 
+	}
+	.comites-nodo .puesto { 
+		font-size: 12px; 
+		line-height: 12px; 
+	}
+/* gobierno */
 
 
 /* ==============================================================
