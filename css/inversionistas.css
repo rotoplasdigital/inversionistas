@@ -451,12 +451,12 @@ td {
 /* ============================================================== */
 	.calendario-head {
 		color: #fff !important;
-		font-size: 30px;
+		/* font-size: 24px; */
 		text-align: center;
 	}
 	.calendario-head-text {
 		color: #fff !important;
-		font-size: 20px;
+		/* font-size: 20px; */
 		padding: 1rem !important;
 	}
 	.calendario-blue2 {
