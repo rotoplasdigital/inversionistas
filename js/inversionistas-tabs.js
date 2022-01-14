@@ -1,4 +1,19 @@
 jQuery(document).ready(function($){
+	// LECTURA DE HASH EN URL
+		//obtenemos en que seccion estamos
+		seccion = $('body')[0].getAttribute('attr')
+		console.log('seccion:'+seccion)
+		// verificamos que exista un hash en la url
+		if ( window.location.hash.substr(1).length > 0 ) {
+			console.log('hash:true')
+			$('#' + window.location.hash.substr(1)).fadeIn()
+			$('body').find("[class*='tab-selector-selected']").removeClass('tab-selector-selected')
+			$('.tab-selector[attr="' + window.location.hash.substr(1) + '"]').addClass('tab-selector-selected')
+		} else {
+			if (seccion == 'informacion-financiera') {
+				$('.tab-selector[attr="informe-trimestral"]').addClass('tab-selector-selected')
+			}
+		}
 	// TABS
 		$('body').on("click", ".tab-selector", function(){
 			tabClicked = this.getAttribute('attr')
