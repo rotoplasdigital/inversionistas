@@ -1,19 +1,32 @@
 jQuery(document).ready(function($){
 	// LECTURA DE HASH EN URL
 		//obtenemos en que seccion estamos
-		seccion = $('body')[0].getAttribute('attr')
-		console.log('seccion:'+seccion)
+		showId = ''
 		// verificamos que exista un hash en la url
 		if ( window.location.hash.substr(1).length > 0 ) {
-			console.log('hash:true')
-			$('#' + window.location.hash.substr(1)).fadeIn()
-			$('body').find("[class*='tab-selector-selected']").removeClass('tab-selector-selected')
-			$('.tab-selector[attr="' + window.location.hash.substr(1) + '"]').addClass('tab-selector-selected')
+			showId = window.location.hash.substr(1)
+			firstLoad(showId)
 		} else {
-			if (seccion == 'informacion-financiera') {
-				$('.tab-selector[attr="informe-trimestral"]').addClass('tab-selector-selected')
+			seccion = $('body')[0].getAttribute('attr')
+			//
+			if (seccion == 'nuestro-portafolio') {
+				showId = 'productos'
 			}
+			if (seccion == 'informacion-financiera') {
+				showId = 'informe-trimestral'
+			}
+			if (seccion == 'gobierno-corporativo') {
+				showId = 'consejo'
+			}
+			if (seccion == 'sustentabilidad') {
+				showId = 'estrategia'
+			}
+			firstLoad(showId)
 		}
+		function firstLoad(showId) {
+			$('.tab-selector[attr="'+ showId +'"]').addClass('tab-selector-selected')
+			$('#' + showId).fadeIn()
+		} 
 	// TABS
 		$('body').on("click", ".tab-selector", function(){
 			tabClicked = this.getAttribute('attr')
