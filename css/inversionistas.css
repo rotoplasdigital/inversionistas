@@ -486,30 +486,32 @@ td {
 /* ==============================================================
 /*	AGUA* BONO SUSTENTABLE
 /* ============================================================== */
-.historico-dividendos {
-	color: #002554;
-}
-.historico-dividendos tbody tr:nth-child(odd) td:nth-child(1) {
-	background-color: #a3c3cc;
-}
-.historico-dividendos tbody tr:nth-child(even) td:nth-child(1) {
-	background-color: #002554;
-	color: #fff;
-}
+	.historico-dividendos {
+		color: #002554;
+	}
+	.historico-dividendos tbody tr:nth-child(odd) td:nth-child(1) {
+		background-color: #a3c3cc;
+	}
+	.historico-dividendos tbody tr:nth-child(even) td:nth-child(1) {
+		background-color: #002554;
+		color: #fff;
+	}
 
-.bono {
-	color: #002554;
-}
-.bono thead {
-    color: #fff;
-}
-.bono thead tr th:nth-child(even) {
-    background: #002554 !important;
-}
-.bono thead tr th:nth-child(odd) {
-    background: #009cde !important;
-}
-.bono tbody tr td:nth-child(even) {
-    background: #efefef !important;
-}
+	.bono {
+		color: #002554;
+	}
+	.bono thead {
+		color: #fff;
+	}
+	.bono thead tr th:nth-child(even) {
+		background: #002554 !important;
+	}
+	.bono thead tr th:nth-child(odd) {
+		background: #009cde !important;
+	}
+	.bono tbody tr td:nth-child(even) {
+		background: #efefef !important;
+	}
+
+	
 /* agua bono sustentable */

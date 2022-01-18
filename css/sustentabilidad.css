@@ -116,3 +116,58 @@
 		width: 85%;
 	}
 }
+
+
+/* comites
+	----------- */
+.contribucion-btn-nodo {
+	text-align: center;
+}
+.contribucion-btn-imagen {
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 2rem;
+    width: 200px;
+    height: 200px;
+    background: beige;
+    display: inline-block;
+}
+.contribucion-btn-imagen img {
+	width: 100%;
+}
+
+.contribucion-nodo {
+	height: 400px;
+}
+
+#contribucion-nodo-1 {
+	background: url('../resources/images/sustentabilidad/ods/primer-alcance.jpg') no-repeat bottom right #26bde2;
+}
+#contribucion-btn-nodo-1 .contribucion-btn-imagen {
+	background: #26bde2;
+}
+#contribucion-nodo-2 {
+	background: url('../resources/images/sustentabilidad/ods/segundo-alcance.jpg') no-repeat bottom right #fd6925;
+}
+#contribucion-btn-nodo-2 .contribucion-btn-imagen {
+	background: #fd6925;
+}
+#contribucion-nodo-3 {
+	background: url('../resources/images/sustentabilidad/ods/tercer-alcance.jpg') no-repeat bottom right #4c9f38;
+}
+#contribucion-btn-nodo-3 .contribucion-btn-imagen {
+	background: #4c9f38;
+}
+
+#contribucion-btn-wrapper .slick-prev:before,
+#contribucion-btn-wrapper .slick-next:before {
+	color: #002554 !important;
+}
+
+#contribucion-slider-wrapper .slick-prev {
+	left: 50px !important;
+	z-index: 1;
+}
+#contribucion-slider-wrapper .slick-next {
+	right: 50px !important;
+}
