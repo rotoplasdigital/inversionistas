@@ -11,22 +11,25 @@ jQuery(document).ready(function($){
 			//
 			if (seccion == 'nuestro-portafolio') {
 				showId = 'productos'
+				firstLoad(showId)
 			}
 			if (seccion == 'informacion-financiera') {
 				showId = 'informe-trimestral'
+				firstLoad(showId)
 			}
 			if (seccion == 'gobierno-corporativo') {
 				showId = 'consejo'
+				firstLoad(showId)
 			}
 			if (seccion == 'sustentabilidad') {
 				showId = 'estrategia'
+				firstLoad(showId)
 			}
-			firstLoad(showId)
 		}
 		function firstLoad(showId) {
 			$('.tab-selector[attr="'+ showId +'"]').addClass('tab-selector-selected')
 			$('#' + showId).fadeIn()
-		} 
+		}
 	// TABS
 		$('body').on("click", ".tab-selector", function(){
 			tabClicked = this.getAttribute('attr')
