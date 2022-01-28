@@ -149,4 +149,5 @@ jQuery(document).ready(function($){
 					document.getElementById('head-' + the_tab).src="https://rotoplas.com/rtp-resources/soluciones-productos/tratamiento-AR-head.jpg";
 				}
 			}
+		//
 })
