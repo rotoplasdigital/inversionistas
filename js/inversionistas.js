@@ -30,29 +30,4 @@ jQuery(document).ready(function($){
 	} else {
 		$('#inversionistas-navegacion').addClass('navbar-dark');
 	}
-	// sliders Contribucion
-		// botones - nav
-		/* $("#contribucion-btn-wrapper").slick({
-			slidesToShow: 3,
-			slidesToScroll: 1,
-			asNavFor: '#contribucion-slider-wrapper',
-			centerMode: true,
-			focusOnSelect: true,
-			responsive: [
-				{
-					breakpoint: 721,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-						arrows: true
-					}
-				}
-			]
-		}); */
-		// slider - slider
-		/* $("#contribucion-slider-wrapper").slick({
-			asNavFor: '#contribucion-btn-wrapper',
-			infinite: true,
-			arrows: true
-		}); */
 });
