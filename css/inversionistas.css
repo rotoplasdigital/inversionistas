@@ -441,7 +441,9 @@ td {
 		vertical-align: middle;
 	}
 	.footer-btn span {
-		vertical-align: middle;
+		vertical-align: top;
+		display: inline-block;
+		width: 85%;
 	}
 /* footer */
 

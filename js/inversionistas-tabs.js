@@ -11,22 +11,25 @@ jQuery(document).ready(function($){
 			//
 			if (seccion == 'nuestro-portafolio') {
 				showId = 'productos'
+				firstLoad(showId)
 			}
 			if (seccion == 'informacion-financiera') {
 				showId = 'informe-trimestral'
+				firstLoad(showId)
 			}
 			if (seccion == 'gobierno-corporativo') {
 				showId = 'consejo'
+				firstLoad(showId)
 			}
 			if (seccion == 'sustentabilidad') {
 				showId = 'estrategia'
+				firstLoad(showId)
 			}
-			firstLoad(showId)
 		}
 		function firstLoad(showId) {
 			$('.tab-selector[attr="'+ showId +'"]').addClass('tab-selector-selected')
 			$('#' + showId).fadeIn()
-		} 
+		}
 	// TABS
 		$('body').on("click", ".tab-selector", function(){
 			tabClicked = this.getAttribute('attr')
@@ -40,7 +43,35 @@ jQuery(document).ready(function($){
 			console.log('showHideTabs')
 			$('.tab:visible').each(function(){
 				$(this).fadeOut('fast', function(){
-					$('#' + tabClicked).fadeIn()
+					$('#' + tabClicked).fadeIn(function(){
+						if (tabClicked == "ods") {
+							console.log('ODS')
+							// botones - nav
+							$("#contribucion-btn-wrapper").slick({
+								slidesToShow: 3,
+								slidesToScroll: 1,
+								asNavFor: '#contribucion-slider-wrapper',
+								centerMode: true,
+								focusOnSelect: true,
+								responsive: [
+									{
+										breakpoint: 721,
+										settings: {
+											slidesToShow: 1,
+											slidesToScroll: 1,
+											arrows: true
+										}
+									}
+								]
+							});
+							// slider - slider
+							$("#contribucion-slider-wrapper").slick({
+								asNavFor: '#contribucion-btn-wrapper',
+								infinite: true,
+								arrows: true
+							});
+						}
+					})
 				})
 			})
 		}
@@ -146,4 +177,5 @@ jQuery(document).ready(function($){
 					document.getElementById('head-' + the_tab).src="https://rotoplas.com/rtp-resources/soluciones-productos/tratamiento-AR-head.jpg";
 				}
 			}
+		//
 })
