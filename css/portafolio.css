@@ -101,3 +101,39 @@
 .bebederos-nodo img {
     height: 160px;
 }
+
+@media screen and (max-width: 1200px) {
+	.productos-nodo {
+		width: 20%;
+	}
+}
+@media screen and (max-width: 992px) {
+	.productos-nodo {
+		width: 20%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.productos-nodo {
+		width: 30%;
+		padding: 1rem;
+	}
+}
+@media screen and (max-width: 576px) {
+	.producto-pais-wrapper {
+		padding-left: 0;
+	}
+	.productos-nodo {
+		width: 45%;
+		margin: 0;
+		padding: 1rem .5rem;
+	}
+
+	.servicios-btns {
+		background: #009CDE;
+		padding-left: 0%;
+	}
+
+	.plantas-nodo {
+		width: 40%;
+	}
+}
