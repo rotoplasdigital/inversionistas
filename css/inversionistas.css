@@ -517,3 +517,17 @@ td {
 
 	
 /* agua bono sustentable */
+
+
+/* ==============================================================
+/*	KIT INVERSIONITAS
+/* ============================================================== */
+#kit-inversionistas tbody tr:last-child td {
+	background-color: #002554 !important;
+	color: #ffffff !important;
+	text-align: center;
+}
+#kit-inversionistas tbody tr:last-child td a {
+	color: #ffffff;
+}
+/* kit inversionistas */
