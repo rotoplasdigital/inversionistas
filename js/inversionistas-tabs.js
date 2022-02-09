@@ -70,6 +70,9 @@ jQuery(document).ready(function($){
 								infinite: true,
 								arrows: true
 							});
+						} else {
+							$("#contribucion-btn-wrapper").slick('unslick')
+							$("#contribucion-slider-wrapper").slick('unslick')
 						}
 					})
 				})
