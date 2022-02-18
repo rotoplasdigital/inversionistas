@@ -335,6 +335,33 @@ td {
 		color: #002554;
 	}
 
+	/* directivos */
+	#directivos-nodo-01 .row:first-child {
+		background: rgba(0, 0, 0, 0.05);
+	}
+	.directivos-btns, 
+	.directivos-tabs {
+		background: #fff;
+		border-radius: 1rem;
+	}
+	.directivos-btns {
+		color: #009cde;
+	}
+	.directivos-btns div {
+		cursor: pointer;
+	}
+	.directivos-btns .subtab-selector-selected {
+		color: #002554;
+	}
+
+	#directivos .thirdbtab-selector-selected {
+		color: #002554;
+	}
+
+	#consejo-nodo-02 .row:first-child {
+		background: rgba(0, 0, 0, 0.05);
+	}
+
 	/* asamblea */
 	.asamblea-btns div {
 		padding: .5rem 2rem;
