@@ -8,6 +8,10 @@
 	font-family: 'rotoplas-light';
 }
 
+table tr {
+	min-height: 66px;
+}
+
 td {
 	vertical-align: middle;
 }
@@ -506,9 +510,9 @@ td {
 	.cobertura-analistas th {
 		color: #009cde;
 	}
-	.cobertura-analistas tbody tr:last-child {
-		background: #a3c3cc;
-	}
+	/* .cobertura-analistas tbody tr:last-child {
+		background: #cecece;
+	} */
 /* contacto ri */
 
 
@@ -542,7 +546,9 @@ td {
 		background: #efefef !important;
 	}
 
-	
+	.cobertura-analistas tr {
+		height: 66px;
+	}
 /* agua bono sustentable */
 
 
