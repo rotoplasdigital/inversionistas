@@ -30,6 +30,10 @@ jQuery(document).ready(function($){
 			$('.tab-selector[attr="'+ showId +'"]').addClass('tab-selector-selected')
 			$('#' + showId).fadeIn()
 		}
+		$(window).on('hashchange', function() {
+			console.log('reload')
+			location.reload()
+		})
 	// TABS
 		$('body').on("click", ".tab-selector", function(){
 			tabClicked = this.getAttribute('attr')

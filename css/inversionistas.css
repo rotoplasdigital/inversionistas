@@ -304,6 +304,20 @@ td {
 	#presentaciones table tbody tr td:nth-child(odd) {
 		width: 90%;
 	}
+
+	/* informe trimestral */
+	.informacion-financiera-btns .subtab-selector-selected {
+		background: #002554;
+		color: #fff;
+	}
+	.informacion-financiera-btns div {
+		padding: 0.5rem 1rem;
+		border: 2px solid #002554;
+		border-radius: 2rem;
+		margin: 0.5rem;
+		transition: all ease .3s;
+		cursor: pointer;
+	}
 /* informacion financiera */
 
 
@@ -555,12 +569,12 @@ td {
 /* ==============================================================
 /*	KIT INVERSIONITAS
 /* ============================================================== */
-#kit-inversionistas tbody tr:last-child td {
-	background-color: #002554 !important;
-	color: #ffffff !important;
-	text-align: center;
-}
-#kit-inversionistas tbody tr:last-child td a {
-	color: #ffffff;
-}
+	#kit-inversionistas tbody tr:last-child td {
+		background-color: #002554 !important;
+		color: #ffffff !important;
+		text-align: center;
+	}
+	#kit-inversionistas tbody tr:last-child td a {
+		color: #ffffff;
+	}
 /* kit inversionistas */
