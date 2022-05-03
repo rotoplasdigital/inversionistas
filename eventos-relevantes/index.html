@@ -93,7 +93,7 @@
 								//console.log('año:'); console.log(year);
 								// pedimos la info del año
 								var yearContent = await getPapaparser(dataCell[1])
-								console.log('yearContent:')
+								console.log('yearContent:' + year)
 								console.log(yearContent.data)
 								// creamos los botones
 								if( !document.getElementById('tab-selector-'+year)) {
@@ -139,7 +139,7 @@
 										tabDiv.appendChild(tabTable)
 									}
 									// verifica si esta activo y crea el tr / td
-									if(dataCell[0] != 'Inactivo') {
+									if(dataCell[0] === 'Activo') {
 										tabRow = document.createElement('tr')
 										tabRow.innerHTML += ''+
 											'<tr>'+
