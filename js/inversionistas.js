@@ -30,4 +30,18 @@ jQuery(document).ready(function($){
 	} else {
 		$('#inversionistas-navegacion').addClass('navbar-dark');
 	}
+	//
+	document.getElementById('producto-us').onclick = function(e){
+		/* e.preventDefault()
+		$.fancybox.open({
+			src  : '<p class="m-0 text-center">Esta siendo redirigido al sitio de<br><strong>Acuantia.com</strong></p>',
+			type : 'html',
+			opts : {
+				afterShow : function( instance, current ) {
+					console.info('done!');
+				}
+			}
+		}) */
+		alert('Esta siendo redirigido al sitio de Acuantia.com')
+	}
 });
